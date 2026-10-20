@@ -1,0 +1,18 @@
+{
+  "name": "remote-browser",
+  "version": "1.0.0",
+  "description": "Run a Chromium tab on your home server and view/control it from any browser.",
+  "main": "server.js",
+  "type": "commonjs",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "puppeteer-core": "^25.15.0",
+    "ws": "^8.22.0"
+  }
+}

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1e1f22">
+  <link rel="icon" href="/icon.svg">
+  <title>Remote Browser</title>
+  <link rel="stylesheet" href="/login.css">
+</head>
+<body>
+  <form method="post" action="/login">
+    <img src="/icon.svg" alt="" width="56" height="56">
+    <h1>Remote Browser</h1>
+    <p id="err" hidden></p>
+    <input type="password" name="password" placeholder="Password" autocomplete="current-password" autofocus required>
+    <button type="submit">Sign in</button>
+  </form>
+  <script>
+    const e = new URLSearchParams(location.search).get('e');
+    if (e) {
+      const el = document.getElementById('err');
+      el.textContent = e === 'locked' ? 'Too many attempts. Try again in 15 minutes.' : 'Wrong password.';
+      el.hidden = false;
+    }
+  </script>
+</body>
+</html>

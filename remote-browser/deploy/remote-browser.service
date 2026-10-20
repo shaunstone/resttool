@@ -1,0 +1,17 @@
+# Copy to /etc/systemd/system/remote-browser.service, adjust User and paths, then:
+#   sudo systemctl daemon-reload && sudo systemctl enable --now remote-browser
+[Unit]
+Description=Remote Browser (stream a Chromium tab to the web)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=shaun
+WorkingDirectory=/opt/remote-browser
+EnvironmentFile=/opt/remote-browser/.env
+ExecStart=/usr/bin/node server.js
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

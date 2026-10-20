@@ -1,0 +1,4 @@
+# Caddy gets HTTPS certificates automatically. WebSockets just work.
+browser.shaunstone.com {
+	reverse_proxy 127.0.0.1:3300
+}

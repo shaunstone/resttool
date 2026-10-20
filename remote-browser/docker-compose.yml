@@ -1,0 +1,11 @@
+services:
+  remote-browser:
+    build: .
+    container_name: remote-browser
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "3300:3300"
+    volumes:
+      - ./data:/data
+    shm_size: "1gb"

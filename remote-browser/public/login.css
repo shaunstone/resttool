@@ -1,0 +1,13 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body {
+  display: flex; align-items: center; justify-content: center; padding: 16px;
+  background: #1e1f22; color: #e3e5e8; font: 15px system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+form { display: flex; flex-direction: column; align-items: center; gap: 12px; width: 100%; max-width: 320px; }
+h1 { font-size: 20px; font-weight: 600; margin: 0 0 8px; }
+input, button { width: 100%; height: 44px; border-radius: 8px; font-size: 16px; }
+input { padding: 0 12px; border: 1px solid #4e5058; background: #2b2d31; color: inherit; outline: none; }
+input:focus { border-color: #5b8def; }
+button { border: 0; background: #5b8def; color: #fff; cursor: pointer; font-weight: 600; }
+#err { color: #f28b82; margin: 0; }

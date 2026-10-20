@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#1e1f22">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/icon.svg">
+  <title>Remote Browser</title>
+  <link rel="stylesheet" href="/app.css">
+</head>
+<body>
+  <header id="chrome">
+    <nav id="tabstrip">
+      <div id="tabs"></div>
+      <button id="newTab" title="New tab">+</button>
+    </nav>
+    <div id="toolbar">
+      <button id="back" title="Back">&#8592;</button>
+      <button id="forward" title="Forward">&#8594;</button>
+      <button id="reload" title="Reload">&#8635;</button>
+      <form id="addressForm">
+        <input id="address" type="text" inputmode="url" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="Search or enter address">
+      </form>
+      <button id="keyboard" title="Show keyboard">&#9000;</button>
+      <button id="menuBtn" title="Menu">&#8942;</button>
+      <div id="menu" hidden>
+        <label><input type="checkbox" id="mobileMode"> Mobile site mode</label>
+        <label><input type="checkbox" id="hidpi"> Sharp (HiDPI) frames</label>
+        <button id="pasteBtn">Paste text&hellip;</button>
+        <button id="fullscreen">Fullscreen</button>
+        <button id="hideChrome">Hide toolbar</button>
+        <a href="/logout">Log out</a>
+      </div>
+      <span id="status" title="Connection"></span>
+    </div>
+  </header>
+
+  <main id="stage">
+    <canvas id="screen" tabindex="0"></canvas>
+    <textarea id="kbd" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" aria-hidden="true"></textarea>
+    <div id="overlay">Connecting&hellip;</div>
+    <button id="showChrome" hidden title="Show toolbar">&#9776;</button>
+  </main>
+
+  <dialog id="jsDialog">
+    <form method="dialog">
+      <p id="jsDialogMsg"></p>
+      <input id="jsDialogInput" type="text">
+      <div class="row">
+        <button value="cancel" id="jsDialogCancel">Cancel</button>
+        <button value="ok" id="jsDialogOk">OK</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div id="toast" hidden></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
